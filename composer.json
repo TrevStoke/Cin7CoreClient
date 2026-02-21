@@ -1,0 +1,35 @@
+{
+  "name": "trevweb/cin7-core-api-v2-client",
+  "description": "A Cin7 Core API V2 Client for PHP",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Trevor Adams",
+      "email": "trevor@trevweb.co.uk"
+    }
+  ],
+  "keywords": [
+    "cin7",
+    "cin7-core",
+    "api-client",
+    "php"
+  ],
+  "require": {
+    "php": ">=8.2",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Trevweb\\Cin7CoreClient\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Trevweb\\Cin7CoreClient\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.0"
+  }
+}
