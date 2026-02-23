@@ -3,3 +3,4 @@ composer.phar
 composer.lock
 .env
 .phpunit.result.cache
+.idea
