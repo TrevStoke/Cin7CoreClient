@@ -52,6 +52,13 @@ try {
     echo "Error fetching products: " . $e->getMessage();
 }
 ```
+## Examples
+See the [examples](examples) directory for more usage examples. Place a file in the examples directory named 'cin7-example-api-credentials.php' with the following contents:
+```php
+<?php
+DEFINE('CIN7_ACCOUNT_ID', 'your-id-here');
+DEFINE('CIN7_APPLICATION_KEY', 'your-key-here');
+```
 
 ## Testing
 
