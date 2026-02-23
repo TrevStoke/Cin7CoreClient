@@ -1,1 +1,0 @@
-{"version":2,"defects":[],"times":{"Trevweb\\Cin7CoreClient\\Tests\\Cin7CoreClientTest::testGet":0.007,"Trevweb\\Cin7CoreClient\\Tests\\Cin7CoreClientTest::testPost":0,"Trevweb\\Cin7CoreClient\\Tests\\Cin7CoreClientTest::testFetchAll":0,"Trevweb\\Cin7CoreClient\\Tests\\Cin7CoreClientTest::testFetchAllStopsWhenFewerThanLimit":0}}
