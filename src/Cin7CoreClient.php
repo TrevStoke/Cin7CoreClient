@@ -134,7 +134,7 @@ class Cin7CoreClient
     public function fetchAll(string $endpoint, string $listKey, array $params = []): Generator
     {
         $page = 1;
-        $limit = 100; // Default page size [cite: 1943]
+        $limit = $params['Limit'] ?? 100; // Default page size [cite: 1943]
         $params['Limit'] = $limit;
 
         do {
