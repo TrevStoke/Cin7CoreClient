@@ -8,7 +8,7 @@ This section provides examples of how to use the Cin7 client library for various
 Create a file in the examples directory called `cin7-example-api-credentials.php` and add the following:
 ```php
 <?php
-DEFINE('CIN7_ACCOUNT_ID', 'your-id-here');
-DEFINE('CIN7_APPLICATION_KEY', 'your-key-here');
+define('CIN7_ACCOUNT_ID', 'your-id-here');
+define('CIN7_APPLICATION_KEY', 'your-key-here');
 ```
 Replace the values with your own credentials from the Cin7 dashboard.

@@ -73,15 +73,30 @@ class Cin7CoreClient
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
         $response = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $httpCode = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $error = curl_error($ch);
-        curl_close($ch);
 
-        if ($error) {
+        return $this->interpretResponse($response, $httpCode, $error);
+    }
+
+    /**
+     * Processes a cURL response: throws on a cURL error or an HTTP status code
+     * >= 400, otherwise decodes the JSON body.
+     *
+     * Extracted so the transport/error logic can be unit-tested without a socket.
+     *
+     * @param string|false $response Raw response body (false on a cURL failure)
+     * @param int          $httpCode HTTP status code
+     * @param mixed        $error    cURL error string ('' or false when none)
+     * @return mixed Decoded JSON response
+     * @throws Exception On a cURL error or an HTTP status code >= 400
+     */
+    protected function interpretResponse(string|false $response, int $httpCode, mixed $error): mixed
+    {
+        if (is_string($error) && $error !== '') {
             throw new Exception("cURL Error: $error");
         }
 
-        // Handle API Status Codes [cite: 1945]
         if ($httpCode >= 400) {
             throw new Exception("API Error ($httpCode): " . $response);
         }
